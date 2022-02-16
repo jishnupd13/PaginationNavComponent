@@ -8,10 +8,14 @@ import javax.inject.Inject
 /** Created by Jishnu P Dileep on 26-05-2021 */
 
 class PreferenceHandler @Inject constructor(
-    val sharedPreferences: SharedPreferences
+    private val sharedPreferences: SharedPreferences
 ) {
 
     var userToken: String
         get() = sharedPreferences.getString("token", "") ?: ""
         set(value) = sharedPreferences.edit { putString("token", value) }
+
+    var isUserLogin: Boolean
+        get() = sharedPreferences.getBoolean("isUserLogin",false) ?: false
+        set(value) = sharedPreferences.edit { putBoolean("isUserLogin", value) }
 }
