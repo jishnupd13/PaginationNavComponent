@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.app.mymainapp.R
 import com.app.mymainapp.databinding.ItemUserProfileBinding
 import com.app.mymainapp.models.users.Data
+import com.bumptech.glide.Glide
 
 
 class PaginationLibraryAdapter : PagingDataAdapter<Data, RecyclerView.ViewHolder>(DiffUtils) {
@@ -23,6 +24,10 @@ class PaginationLibraryAdapter : PagingDataAdapter<Data, RecyclerView.ViewHolder
         val userHolder = holder as UserProfileViewHolder
         val binding = userHolder.itemBinding
         binding.item = data
+
+        Glide.with(userHolder.itemBinding.imagePerson.context).load(data?.avatar)
+            .into(binding.imagePerson)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {

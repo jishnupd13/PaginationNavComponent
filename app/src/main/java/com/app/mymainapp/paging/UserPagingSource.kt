@@ -7,7 +7,7 @@ import com.app.mymainapp.models.users.Data
 import com.app.mymainapp.repository.AppRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import okhttp3.internal.wait
+import timber.log.Timber
 
 class UserPagingSource(
     private val repository: AppRepository
@@ -26,9 +26,12 @@ class UserPagingSource(
 
             withContext(Dispatchers.IO) {
 
-                when(val response =   repository.getUserProfile(position)){
+                when (val response = repository.getUserProfile(position)) {
 
-                    is ResultWrapper.Success->{
+                    is ResultWrapper.Success -> {
+
+                        totalPages = response.data.totalPages ?: 0
+                        Timber.e("total pages 0009 $totalPages")
                         LoadResult.Page(
                             data = response.data.data ?: mutableListOf(),
                             prevKey = null,
@@ -36,7 +39,7 @@ class UserPagingSource(
                         )
                     }
 
-                    is  ResultWrapper.Failure->{
+                    is ResultWrapper.Failure -> {
                         LoadResult.Error(Throwable(response.message))
                     }
                 }

@@ -8,6 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.app.mymainapp.R
 import com.app.mymainapp.databinding.FragmentPagingLibraryBinding
+import com.app.mymainapp.ui.adapters.paginationlibrary.LoadingAdapter
 import com.app.mymainapp.ui.adapters.paginationlibrary.PaginationLibraryAdapter
 import com.app.mymainapp.viewmodels.PagingLibraryViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -32,6 +33,7 @@ class PagingLibraryFragment : Fragment(R.layout.fragment_paging_library), View.O
 
     private fun initView() {
         paginationLibraryAdapter = PaginationLibraryAdapter()
+        paginationLibraryAdapter.withLoadStateFooter(LoadingAdapter())
         binding.recyclerViewPagingLibrary.adapter = paginationLibraryAdapter
     }
 

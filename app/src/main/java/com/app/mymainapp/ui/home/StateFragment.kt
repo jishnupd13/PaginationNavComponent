@@ -30,7 +30,6 @@ class StateFragment : Fragment(R.layout.fragment_state), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.listener = this
         binding.viewModel = viewModel
         initView()
     }
@@ -79,14 +78,14 @@ class StateFragment : Fragment(R.layout.fragment_state), View.OnClickListener {
                 }
             }
         })
+
+        binding.textNextPage.setOnClickListener {
+           findNavController().navigate(R.id.action_stateFragment_to_pagingLibraryFragment)
+
+        }
     }
 
     override fun onClick(view: View?) {
 
-        when(view){
-            binding.textNextPage->{
-                StateFragmentDirections.actionStateFragmentToPagingLibraryFragment()
-            }
-        }
     }
 }

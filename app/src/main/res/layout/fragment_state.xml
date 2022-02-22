@@ -9,9 +9,6 @@
             name="viewModel"
             type="com.app.mymainapp.ui.home.StateFragmentViewModel" />
 
-        <variable
-            name="listener"
-            type="android.view.View.OnClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

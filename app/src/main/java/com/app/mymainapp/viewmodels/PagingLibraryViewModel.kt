@@ -14,8 +14,8 @@ class PagingLibraryViewModel @Inject constructor(
 ) : ViewModel() {
 
     fun getUserListData() = Pager(config = PagingConfig(
-        initialLoadSize = 10, pageSize = 10,
-        prefetchDistance = 12, enablePlaceholders = false
+        initialLoadSize = 6, pageSize = 0,
+        prefetchDistance = 6, enablePlaceholders = true
     ),
         pagingSourceFactory = { UserPagingSource(mainRepository) }
     ).flow
