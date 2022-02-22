@@ -40,9 +40,16 @@
         <action
             android:id="@+id/action_stateFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_stateFragment_to_pagingLibraryFragment"
+            app:destination="@id/pagingLibraryFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.app.mymainapp.ui.profile.ProfileFragment"
         android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/pagingLibraryFragment"
+        android:name="com.app.mymainapp.ui.paginglibrary.PagingLibraryFragment"
+        android:label="PagingLibraryFragment" />
 </navigation>

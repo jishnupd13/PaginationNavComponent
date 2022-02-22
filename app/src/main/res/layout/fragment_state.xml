@@ -41,6 +41,22 @@
                 android:textColor="@color/black"
                 android:fontFamily="@font/open_sans_bold"
                 />
+
+            <TextView
+                android:id="@+id/text_next_page"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/text_user"
+                app:layout_constraintBottom_toBottomOf="@+id/text_user"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="14dp"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:text="Next Page"
+                android:fontFamily="@font/open_sans_bold"
+                android:padding="10dp"
+                />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

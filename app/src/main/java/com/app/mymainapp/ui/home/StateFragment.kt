@@ -83,5 +83,10 @@ class StateFragment : Fragment(R.layout.fragment_state), View.OnClickListener {
 
     override fun onClick(view: View?) {
 
+        when(view){
+            binding.textNextPage->{
+                StateFragmentDirections.actionStateFragmentToPagingLibraryFragment()
+            }
+        }
     }
 }
